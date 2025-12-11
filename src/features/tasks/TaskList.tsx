@@ -2,11 +2,11 @@
 
 import { useState } from "react";
 import { useTaskStore } from "./taskStore";
-import TaskCard from "./TaskCard";
+import TaskCard from "./Taskcard";
 import TaskForm from "./TaskForm";
 import Button from "@/components/Button";
 import ThemeToggle from "@/features/tasks/ThemeToggle"; 
-import { Task } from "@/types/task";
+import { Task } from "@/types/task"; // if using absolute paths
 
 const TaskList = () => {
   const { tasks } = useTaskStore();
@@ -39,7 +39,7 @@ const TaskList = () => {
           <p className="text-gray-500 text-center">No Tasks yet. Create one!</p>
         )}
 
-        {tasks.map((task) => (
+        {tasks.map((task: Task) => (
           <TaskCard
             key={task.id}
             task={task}

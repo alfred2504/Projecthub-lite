@@ -1,26 +1,28 @@
-"compilerOptions": {
-  "target": "ES2017",
-  "lib": ["dom", "dom.iterable", "esnext"],
-  "allowJs": true,
-  "skipLibCheck": true,
-  "strict": true,
-  "noEmit": true,
-  "esModuleInterop": true,
-  "module": "esnext",
-  "moduleResolution": "bundler",
-  "resolveJsonModule": true,
-  "isolatedModules": true,
-  "jsx": "react-jsx",
-  "incremental": true,
-  "plugins": [
-    { "name": "next" }
+{
+  "compilerOptions": {
+    "target": "ES2017",
+    "lib": ["dom", "dom.iterable", "esnext"],
+    "allowJs": true,
+    "skipLibCheck": true,
+    "strict": true,
+    "noEmit": true,
+    "esModuleInterop": true,
+    "module": "esnext",
+    "moduleResolution": "bundler",
+    "resolveJsonModule": true,
+    "isolatedModules": true,
+    "jsx": "react-jsx",
+    "incremental": true,
+    "plugins": [{ "name": "next" }],
+    "baseUrl": "src",                  // ✅ Required for @/* alias
+    "paths": { "@/*": ["*"] },         // ✅ Path alias
+    "ignoreDeprecations": "6.0"        // ✅ Silences baseUrl deprecation warning
+  },
+  "include": [
+    "next-env.d.ts",
+    "**/*.ts",
+    "**/*.tsx",
+    "src/types"                       // ✅ Include custom types like next-themes.d.ts
   ],
-
-  // ✅ ADD THIS
-  "baseUrl": "src",
-
-  // ✅ FIXED ALIAS
-  "paths": {
-    "@/*": ["*"]
-  }
+  "exclude": ["node_modules"]
 }
